@@ -1,2 +1,3 @@
 yfinance
+flake8
 pytest
