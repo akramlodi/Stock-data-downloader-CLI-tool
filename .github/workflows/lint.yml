@@ -24,9 +24,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Check code format with black
+        run: black --check .
+
+      - name: Check import order with isort
+        run: isort --check-only .
+
       - name: Run flake8
-        run: |
-          flake8 .
+        run: flake8 .
 
   test:
     runs-on: ubuntu-latest
@@ -46,5 +51,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run tests
-        run: |
-          pytest -v
+        run: pytest -v

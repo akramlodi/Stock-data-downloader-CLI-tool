@@ -6,9 +6,10 @@ using yfinance API in CSV file.
 """
 
 import argparse
-import yfinance as yf
 from datetime import datetime
 from pathlib import Path
+
+import yfinance as yf
 
 
 def download_data(ticker, start, end):
@@ -53,15 +54,12 @@ def main():
         description="Download stock price data from Yahoo Finance."
     )
     parser.add_argument(
-        "--tickers", nargs="+", required=True,
-        help="List of stock tickers (ex: AAPL)"
+        "--tickers", nargs="+", required=True, help="List of stock tickers (ex: AAPL)"
     )
     parser.add_argument(
         "--start", required=True, help="Start date in YYYY-MM-DD format"
     )
-    parser.add_argument(
-        "--end", required=True, help="End date in YYYY-MM-DD format"
-    )
+    parser.add_argument("--end", required=True, help="End date in YYYY-MM-DD format")
     args = parser.parse_args()
 
     if not validate_date(args.start, args.end):

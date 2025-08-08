@@ -1,3 +1,6 @@
 yfinance
 flake8
 pytest
+pre-commit
+black
+isort
