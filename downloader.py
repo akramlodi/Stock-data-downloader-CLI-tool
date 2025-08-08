@@ -53,8 +53,8 @@ def main():
         description="Download stock price data from Yahoo Finance."
     )
     parser.add_argument(
-        "--tickers", nargs="+", required=True, help="List " \
-        "of stock tickers (e.g., AAPL)"
+        "--tickers", nargs="+", required=True,
+        help="List of stock tickers (ex: AAPL)"
     )
     parser.add_argument(
         "--start", required=True, help="Start date in YYYY-MM-DD format"
